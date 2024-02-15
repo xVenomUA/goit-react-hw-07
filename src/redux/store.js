@@ -1,7 +1,4 @@
-import {
-  combineSlices,
-  configureStore,
-} from "@reduxjs/toolkit";
+import { combineSlices, configureStore } from "@reduxjs/toolkit";
 
 import storage from "redux-persist/lib/storage";
 

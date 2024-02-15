@@ -7,7 +7,8 @@ import * as Yup from "yup";
 
 import { useId } from "react";
 import { useDispatch } from "react-redux";
-import { addNumber } from "../../redux/numberSlice";
+
+import { fetchAddContact } from "../../redux/operations";
 
 
 const FeedbackSchema = Yup.object().shape({
@@ -39,7 +40,7 @@ export const ConctactForm = () => {
       number: values.number,
     };
 
-    dispatch(addNumber(newContact));
+    dispatch(fetchAddContact(newContact));
     actions.resetForm();
 
   };
