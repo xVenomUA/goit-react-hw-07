@@ -5,11 +5,11 @@ import {
   fetchDeleteContact,
 } from "../Numbers/operationNumber";
 
-export const handlePending = (state) => {
+const handlePending = (state) => {
   state.isLoading = true;
 };
 
-export const handleRejected = (state, action) => {
+ const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };

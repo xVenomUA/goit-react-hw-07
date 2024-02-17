@@ -10,8 +10,7 @@ export const ContactList = () => {
   const filtQuery = useSelector(getFilter);
   const filtData = dataContact.filter((data) => {
     return data.name.toLowerCase().includes(filtQuery.toLowerCase());
-  }
-  );
+  });
   return (
     <ul className={css.list}>
       {filtData.map((data) => {
