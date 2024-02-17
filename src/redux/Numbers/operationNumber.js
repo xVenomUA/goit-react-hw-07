@@ -23,7 +23,7 @@ export const fetchAddContact = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
+);
 
 export const fetchDeleteContact = createAsyncThunk(
   "contacts/fetchDeleteContact",
@@ -35,4 +35,4 @@ export const fetchDeleteContact = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
+);

@@ -3,9 +3,10 @@ import { SearchBar } from "./components/SearchBar/SearchBar";
 import { ConctactForm } from "./components/ContactForm/ContactForm";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchContacts } from "./redux/operations";
+
 import { Loader } from "./components/Loader/Loader";
 import { getLoading } from "./redux/selector";
+import { fetchContacts } from "./redux/Numbers/operationNumber";
 
 export const App = () => {
   const dispatch = useDispatch();

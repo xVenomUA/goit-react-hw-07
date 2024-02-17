@@ -1,10 +1,6 @@
-import { combineSlices, configureStore } from "@reduxjs/toolkit";
-
-import storage from "redux-persist/lib/storage";
+import { configureStore } from "@reduxjs/toolkit";
 
 import {
-  persistReducer,
-  persistStore,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -12,24 +8,15 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import { numberReducer } from "./numberSlice";
-import { filterReducer } from "./filterSlice";
+import { numberReducer } from "./Numbers/numberSlice";
+import { filterReducer } from "./FilterContacts/filterSlice";
 
-const persistConfig = {
-  key: "root",
-  version: 1,
-  storage,
-};
-
-const rootReducer = combineSlices({
-  filter: filterReducer,
-  numbers: numberReducer,
-});
-
-const persistedTAskReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedTAskReducer,
+  reducer: {
+    filter: filterReducer,
+    numbers: numberReducer,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -37,5 +24,3 @@ export const store = configureStore({
       },
     }),
 });
-
-export const persistor = persistStore(store);
